@@ -1,0 +1,12 @@
+<li>
+    {{movie_title}}
+  
+    <button class="host_like" data-id="{{id}}" data-newGuest_like="{{liked}}">
+        {{#if liked}}Like{{else}}dislike{{/if}}
+    </button>
+
+<button class="host_dislike" data-id="{{id}}" data-newGuest_like="{{liked}}">
+        {{#if liked}}Like{{else}}Does not like{{/if}}
+    </button>
+
+</li>

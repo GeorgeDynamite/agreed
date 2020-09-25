@@ -4,10 +4,12 @@ $(function() {
       var newGuestLike = $(this).data("newGuestLike");
   
       var guestLikeMovie= {
-        guest_like: newGuestLike
+        guest_like: 1
+      
       };
+      
   
-      $.ajax("/api/recommended/" + id, {
+      $.ajax("/api/recommended/guest/" + id, {
         type: "PUT",
         data: guestLikeMovie
       }).then(
@@ -16,8 +18,11 @@ $(function() {
           location.reload();
         }
       );
+      
     });
+    
 });
+
 
 $(function() {
     $(".host_like").on("click", function(event) {
@@ -28,7 +33,7 @@ $(function() {
         host_like: host_like
       };
   
-      $.ajax("/api/recommended/" + id, {
+      $.ajax("/api/recommended/host/" + id, {
         type: "PUT",
         data: hostLikeMovie
       }).then(
